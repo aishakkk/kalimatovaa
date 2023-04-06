@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        int a = 2;
-        int n = 10;
-        System.out.println(findPow(a, n));
+        int n = 5;
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(findReverse(n, arr));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -56,6 +56,14 @@ public class Main {
         }
         else {
             return a * findPow(a, n-1);
+        }
+    }
+    static String findReverse(int n, int[] arr) {
+        if (n == 1) {
+            return Integer.toString(arr[0]);
+        }
+        else {
+            return Integer.toString(arr[n-1]) + " " + findReverse(n-1, arr);
         }
     }
 }
