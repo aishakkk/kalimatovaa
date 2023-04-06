@@ -1,8 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 5;
-        int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(findReverse(n, arr));
+        String text = "12354";
+        System.out.println(isAllNumbers(text));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -64,6 +63,14 @@ public class Main {
         }
         else {
             return Integer.toString(arr[n-1]) + " " + findReverse(n-1, arr);
+        }
+    }
+    static boolean isAllNumbers(String t) {
+        if (t.length() == 1) {
+            return Character.isDigit(t.charAt(0));
+        }
+        else {
+            return Character.isDigit(t.charAt(0)) && isAllNumbers(t.substring(1));
         }
     }
 }
