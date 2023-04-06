@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 17;
-        System.out.println(findFib(n));
+        int a = 2;
+        int n = 10;
+        System.out.println(findPow(a, n));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -47,6 +48,14 @@ public class Main {
         }
         else {
             return findFib(n-1) + findFib(n-2);
+        }
+    }
+    static int findPow(int a, int n) {
+        if (n == 1) {
+            return a;
+        }
+        else {
+            return a * findPow(a, n-1);
         }
     }
 }
