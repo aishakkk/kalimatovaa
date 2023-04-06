@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 7;
-        System.out.println(isPrime(n));
+        int n = 5;
+        System.out.println(findFact(n));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -31,6 +31,14 @@ public class Main {
         }
         else {
             return false;
+        }
+    }
+    public static int findFact(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        else {
+            return n * findFact(n-1);
         }
     }
 }
