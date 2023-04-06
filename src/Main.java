@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        String text = "12354";
-        System.out.println(isAllNumbers(text));
+        int n = 7;
+        int k = 5;
+        System.out.println(findBin(n, k));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -71,6 +72,14 @@ public class Main {
         }
         else {
             return Character.isDigit(t.charAt(0)) && isAllNumbers(t.substring(1));
+        }
+    }
+    static int findBin(int n, int k) {
+        if (k == 0 || k == n) {
+            return 1;
+        }
+        else {
+            return findBin(n-1, k-1) + findBin(n-1, k);
         }
     }
 }
