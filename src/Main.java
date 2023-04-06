@@ -1,8 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {10, 1, 32, 3, 45};
-        double avg = findAvg(arr.length, arr);
-        System.out.println("Min from arr is: " + avg);
+        int n = 7;
+        System.out.println(isPrime(n));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -19,5 +18,19 @@ public class Main {
             sum += arr[i];
         }
         return sum / n;
+    }
+    public static boolean isPrime(int n) {
+        int div = 0;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                div++;
+            }
+        }
+        if (div == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
