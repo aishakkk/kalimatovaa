@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 5;
-        System.out.println(findFact(n));
+        int n = 17;
+        System.out.println(findFib(n));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -39,6 +39,14 @@ public class Main {
         }
         else {
             return n * findFact(n-1);
+        }
+    }
+    static int findFib(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        else {
+            return findFib(n-1) + findFib(n-2);
         }
     }
 }
