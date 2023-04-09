@@ -1,8 +1,66 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int a = 32;
-        int b = 48;
-        System.out.println(findGCD(a, b));
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Choose the problem to solve (1-10): ");
+        int answer = sc.nextInt();
+        switch (answer) {
+            case 1:
+                System.out.println("First problem... Enter a length, and array");
+                int n1 = sc.nextInt();
+                int[] arr1 = new int[n1];
+                for (int i = 0; i < n1; i++) {
+                    arr1[i] = sc.nextInt();
+                }
+                System.out.println(findMin(n1, arr1));
+            case 2:
+                System.out.println("Second problem... Enter a length, and array");
+                int n2 = sc.nextInt();
+                int[] arr2 = new int[n2];
+                for (int i = 0; i < n2; i++) {
+                    arr2[i] = sc.nextInt();
+                }
+                System.out.println(findAvg(n2, arr2));
+            case 3:
+                System.out.print("Third problem... Enter your number: ");
+                int n3 = sc.nextInt();
+                System.out.println(isPrime(n3));
+            case 4:
+                System.out.print("Fourth problem... Enter your number: ");
+                int n4 = sc.nextInt();
+                System.out.println(findFact(n4));
+            case 5:
+                System.out.print("Fifth problem... Enter your number: ");
+                int n5 = sc.nextInt();
+                System.out.println(findFib(n5));
+            case 6:
+                System.out.println("Sixth problem... Enter your numbers");
+                int a6 = sc.nextInt();
+                int n6 = sc.nextInt();
+                System.out.println(findPow(a6, n6));
+            case 7:
+                System.out.println("Seventh problem... Enter a length, and array");
+                int n7 = sc.nextInt();
+                int[] arr7 = new int[n7];
+                for (int i = 0; i < n7; i++) {
+                    arr7[i] = sc.nextInt();
+                }
+                System.out.println(findReverse(n7, arr7));
+            case 8:
+                System.out.print("Eighth problem... Enter your text: ");
+                String text = sc.nextLine();
+                System.out.println(isAllDigits(text));
+            case 9:
+                System.out.println("Ninth problem... Enter your numbers");
+                int n9 = sc.nextInt();
+                int k9 = sc.nextInt();
+                System.out.println(findBin(n9, k9));
+            case 10:
+                System.out.println("Sixth problem... Enter your numbers");
+                int a10 = sc.nextInt();
+                int b10 = sc.nextInt();
+                System.out.println(findGCD(a10, b10));
+        }
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
