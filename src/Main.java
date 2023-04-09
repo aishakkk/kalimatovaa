@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 7;
-        int k = 5;
-        System.out.println(findBin(n, k));
+        int a = 32;
+        int b = 48;
+        System.out.println(findGCD(a, b));
     }
     public static int findMin(int n, int[] arr){
         if(n==1) {
@@ -66,12 +66,12 @@ public class Main {
             return Integer.toString(arr[n-1]) + " " + findReverse(n-1, arr);
         }
     }
-    static boolean isAllNumbers(String t) {
+    static boolean isAllDigits(String t) {
         if (t.length() == 1) {
             return Character.isDigit(t.charAt(0));
         }
         else {
-            return Character.isDigit(t.charAt(0)) && isAllNumbers(t.substring(1));
+            return Character.isDigit(t.charAt(0)) && isAllDigits(t.substring(1));
         }
     }
     static int findBin(int n, int k) {
@@ -80,6 +80,14 @@ public class Main {
         }
         else {
             return findBin(n-1, k-1) + findBin(n-1, k);
+        }
+    }
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        else {
+            return findGCD(b, a%b);
         }
     }
 }
